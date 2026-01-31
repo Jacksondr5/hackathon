@@ -16,6 +16,7 @@ import { z } from "zod";
  * Set these in a .env.local file at the root of the hackathon app
  */
 export const env = createEnv({
+  skipValidation: !!process.env.SKIP_ENV_VALIDATION,
   server: {},
   client: {
     NEXT_PUBLIC_CLERK_FRONTEND_API_URL: z.string().min(1),
